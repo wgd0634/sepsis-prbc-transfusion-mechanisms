@@ -17,6 +17,7 @@ sql/
 python/
   eicu_analysis.py                               # IPTW, mediation (with multiple imputation), subgroup analysis
   mimic_ef_subgroup_analysis.py                  # EF subgroup interaction analysis (ICD vs echocardiographic LVEF)
+  competing_risk_analysis.py                     # Weighted Aalen-Johansen competing-risk analysis (7-day AKI, death as competing event)
 ```
 
 ## Reproduction pipeline

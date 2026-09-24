@@ -93,9 +93,10 @@ base_cohort AS (
 ),
 -- ===== 协变量 =====
 apache AS (
-    SELECT patientunitstayid AS stay_id, apachescore
+    SELECT DISTINCT ON (patientunitstayid) patientunitstayid AS stay_id, apachescore
     FROM apachepatientresult
     WHERE apacheversion IN ('IV', 'IVa')
+    ORDER BY patientunitstayid, CASE apacheversion WHEN 'IV' THEN 0 ELSE 1 END
 ),
 comorb AS (
     SELECT b.stay_id,
